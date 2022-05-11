@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+sichuanMojo/__init__.py
+sichuanMojo/tidy_pd.py
+sichuanMojo.egg-info/PKG-INFO
+sichuanMojo.egg-info/SOURCES.txt
+sichuanMojo.egg-info/dependency_links.txt
+sichuanMojo.egg-info/requires.txt
+sichuanMojo.egg-info/top_level.txt
