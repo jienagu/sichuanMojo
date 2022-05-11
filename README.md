@@ -47,6 +47,8 @@ test_df= pd.DataFrame(data)
 
 ### unite cols into one column
 
+Note: if arg output_json = True, output will be json format. Otherwise, output will be a data frame.
+
 ```python
 sm.unite_col(test_df, unite_by = ["group", "major", "response"], pattern="; ", united_col_name="New_col", output_json=False)
 
@@ -61,6 +63,8 @@ sm.unite_col(test_df, unite_by = ["group", "major", "response"], pattern="; ", u
 
 
 ### separate column by a pattern into individual column
+
+Note: if arg output_json = True, output will be json format. Otherwise, output will be a data frame.
 
 ```python
 # Test data
@@ -122,6 +126,8 @@ sm.groupby_col(test_df, group_by = ["group", "major"], summmarize_at = "name", o
 
 ### provide a summary table of a selected column with basic statistical infomation (min, max, sum, median) which grouped by desired column(s)
 
+Note: if arg output_json = True, output will be json format. Otherwise, output will be a data frame.
+
 ```python
 sm.groupby_across(test_df, ["group", "major"], summmarize_at="age", operation=None, output_json = False)
 ```
@@ -135,6 +141,8 @@ sm.groupby_across(test_df, ["group", "major"], summmarize_at="age", operation=No
 
 ### provide a pivot (count/frequency) table of a selected column which grouped by desired column(s)
 
+Note: if arg output_json = True, output will be json format. Otherwise, output will be a data frame.
+
 ```python
 sm.pivot_tb(test_df, group_by=["group", "major"], summmarize_at="response", operation="count", output_json = False, na_fill=0)
 ```
@@ -147,6 +155,8 @@ sm.pivot_tb(test_df, group_by=["group", "major"], summmarize_at="response", oper
 
 
 ### provide a pivot (rate/percentage) table of a selected column which grouped by desired column(s)
+
+Note: if arg output_json = True, output will be json format. Otherwise, output will be a data frame.
 
 ```python
 sm.pivot_rate(test_df, group_by=["major", "group"], summmarize_at="response", output_json = False, na_fill=0)
