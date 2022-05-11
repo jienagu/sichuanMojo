@@ -23,6 +23,7 @@ The Sichuan province is pandas' hometown which explains the name of this library
 
 ```python
 import sichuanMojo as sm
+import pandas as pd
 
 # test_dict as an example input
 data = {'name':['Tom', 'nick', 'krish', 'jack', 'Mike','Jan'],
