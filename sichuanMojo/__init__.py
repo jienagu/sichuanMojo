@@ -14,5 +14,6 @@ __all__ = [
     "groupby_col",
     "groupby_across",
     "pivot_tb",
-    "pivot_rate"
+    "pivot_rate",
+    "simplify_network_df"
 ]

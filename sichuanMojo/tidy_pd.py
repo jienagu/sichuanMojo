@@ -118,3 +118,12 @@ def pivot_rate(input_data, group_by, summmarize_at, output_json = False, na_fill
         
     return output 
 
+def simplify_network_df(df, from_col = "from", to_col = "to", keep = "first"):
+    """simplify the network dataframe from directed to undirected"""
+    temp_new_col_name = from_col+to_col+'merged'
+    df[temp_new_col_name] = df[[from_col, to_col]].apply(lambda x: list(x), axis=1)
+    df[temp_new_col_name] = df[[temp_new_col_name]].apply(lambda x: str(sorted(x[0]) ), axis=1)
+    df = df.drop_duplicates(subset=[temp_new_col_name], keep=keep)
+    output_df = df.drop([temp_new_col_name], axis = 1)
+   
+    return output_df
