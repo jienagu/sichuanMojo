@@ -170,35 +170,35 @@ sm.pivot_rate(test_df, group_by=["major", "group"], summmarize_at="response", ou
 |  2 | english | A       |                    0 |                     1 |                   0 |                   0 |                  100 |                  0 |
 |  3 | english | B       |                    1 |                     0 |                   0 |                 100 |                    0 |                  0 |
 
-    ### provide an easy way to simplify network data frame from directed to undirected
+### provide an easy way to simplify network data frame from directed to undirected
         
-        Note: if arg `keep = "last"`, output dataframe will keep the last row of duplicated rows. if arg `keep = "first"`, output dataframe will keep the first row of duplicated rows. 
-        
-        
-        ```python
-        data = {'from':['Tom', 'Jack', 'Jen', 'Sam'],
-        'overlap':[20, 21, 19, 18],
-        'to':['Jack','Tom', 'Emily', 'John']}
-         
-        test_df= pd.DataFrame(data)
-        
-        ```
-        |    | from   |   overlap | to    |
-        |---:|:-------|----------:|:------|
-        |  0 | Tom    |        20 | Jack  |
-        |  1 | Jack   |        21 | Tom   |
-        |  2 | Jen    |        19 | Emily |
-        |  3 | Sam    |        18 | John  |
+Note: if arg `keep = "last"`, output dataframe will keep the last row of duplicated rows. if arg `keep = "first"`, output dataframe will keep the first row of duplicated rows. 
 
-        In the test_df, we have duplicated Tom <--> Jack pairs. 
-        
-        ```python
-        sm.simplify_network_df(test_df, from_col = "from", to_col = "to", keep = "first")
-        ```
-        |    | from   |   overlap | to    |
-        |---:|:-------|----------:|:------|
-        |  0 | Tom    |        20 | Jack  |
-        |  2 | Jen    |        19 | Emily |
-        |  3 | Sam    |        18 | John  |
 
-        We can see output only keeps one Tom <--> Jack pair. 
+```python
+data = {'from':['Tom', 'Jack', 'Jen', 'Sam'],
+'overlap':[20, 21, 19, 18],
+'to':['Jack','Tom', 'Emily', 'John']}
+
+test_df= pd.DataFrame(data)
+
+```
+|    | from   |   overlap | to    |
+|---:|:-------|----------:|:------|
+|  0 | Tom    |        20 | Jack  |
+|  1 | Jack   |        21 | Tom   |
+|  2 | Jen    |        19 | Emily |
+|  3 | Sam    |        18 | John  |
+
+In the test_df, we have duplicated Tom <--> Jack pairs. 
+
+```python
+sm.simplify_network_df(test_df, from_col = "from", to_col = "to", keep = "first")
+```
+|    | from   |   overlap | to    |
+|---:|:-------|----------:|:------|
+|  0 | Tom    |        20 | Jack  |
+|  2 | Jen    |        19 | Emily |
+|  3 | Sam    |        18 | John  |
+
+We can see output only keeps one Tom <--> Jack pair. 
