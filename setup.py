@@ -5,7 +5,7 @@ HERE = pathlib.Path(__file__).parent
 
 VERSION = '0.1.1'
 PACKAGE_NAME = 'sichuanMojo'
-AUTHOR = 'Jiena Gu McLellan'
+AUTHOR = 'Jiena Gu McLellan, Robert Middlekauff'
 AUTHOR_EMAIL = 'jienagu90@gmail.com'
 URL = 'https://github.com/jienagu/sichuanMojo'
 
